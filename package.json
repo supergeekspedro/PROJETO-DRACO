@@ -1,0 +1,19 @@
+{
+  "name": "projeto-draco",
+  "version": "1.0.0",
+  "description": "um projeto mto draco",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "draco"
+  ],
+  "author": "draco",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "pug": "^3.0.2"
+  }
+}

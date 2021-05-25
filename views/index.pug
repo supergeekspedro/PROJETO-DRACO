@@ -1,0 +1,11 @@
+doctype html
+html(lang="pt-BR")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title PROJETO DRACO
+    body 
+        form(action="/postagem", method="POST")
+            input(type="texto", placeholder="Digite seu nome", name="usuario", maxlength="50")
+            textarea(placeholder="Digite uma descricao", name="descricao", maxlength="1000")
+            input(type="submit", value="ENVIAR")
