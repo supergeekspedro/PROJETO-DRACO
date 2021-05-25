@@ -1,0 +1,14 @@
+doctype html
+html(lang="pt-BR")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title PROJETO DRACO
+        link(rel="stylesheet", href="/public/style.css")
+    body 
+        h1 POSTAGEM DRACO 
+        each postagem in postagens
+            div(class="content")
+                div(class="content-user") #{postagem.usuario}
+                div(class="content-describe") #{postagem.descricao}
+            hr

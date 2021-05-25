@@ -1,4 +1,5 @@
 CREATE DATABASE draco;
+-- DROP DATABASE draco;
 
 \c draco;
 

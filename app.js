@@ -1,31 +1,17 @@
-const express = require("express");
-const postagem = require("./database/postagem");
+const express = require("express")
+const route = require("./routes/index")
+const app = express()
 
-const app = express();
+app.set("view engine", "pug")
+app.set("views", "./views")
 
-app.set("view engine", "pug");
-app.set("views", "./views");
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use("/public", express.static("public"))
 
-app.get("/", function(req, res) {
-    res.render("index.pug");
-});
-
-app.post("/postagem", function(req, res) {
-    const { usuario, descricao } = req.body; 
-    postagem.Criar(usuario, descricao);
-    res.redirect("back");
-});
-
-// HOME, INDEX, FEED, NEWS, EXPLORER, REELS
-app.get("/feed", function(req, res) {
-    postagem.Obter().then(function(resultados) {
-        console.log(resultados);
-    });
-});
+app.use(route)
 
 app.listen(3000, function(){
-    console.log("SERVIDOR EM FUNCIONAMENTO");
-});
+    console.log("SERVIDOR EM FUNCIONAMENTO")
+})

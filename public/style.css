@@ -1,0 +1,23 @@
+body {
+    background: #202020;
+    color: #eee;
+    font-family: "Segoe UI", "Verdana", sans-serif;
+    margin: 0 32px;
+}
+
+h1 {
+    color: #f05454
+}
+
+div.content {
+    padding: 16px 0;
+}
+
+div.content-user {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+div.content-describe {
+    color: #aaa;
+}
