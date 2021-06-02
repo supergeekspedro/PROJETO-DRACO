@@ -7,7 +7,7 @@ html(lang="pt-BR")
         link(rel="stylesheet", href="/public/style.css")
     body 
 
-        h1 PROJETO DRACO: feed
+        h1 PROJETO DRACO: post
 
         hr
 
@@ -18,9 +18,7 @@ html(lang="pt-BR")
 
         hr
 
-        each postagem in postagens
-            div(class="content")
-                div(class="content-user") #{postagem.usuario}
-                div(class="content-describe") #{postagem.descricao}
-                a(class="content-remove", href=`/remove/${postagem.usuario}`) 🔥
-            hr
+        form(action="/postagem", method="POST")
+            input(type="text", placeholder="Digite seu nome", name="usuario", maxlength="50")
+            textarea(placeholder="Digite uma descricao", name="descricao", maxlength="1000")
+            input(type="submit", value="ENVIAR")

@@ -21,3 +21,44 @@ div.content-user {
 div.content-describe {
     color: #aaa;
 }
+
+a.content-remove {
+    font-size: 32pt;
+    text-decoration: none;
+}
+
+input[type=text] {
+    background: #202020;
+    color: #f05454;
+    border: 1px solid #ccc;
+    height: 42px;
+}
+
+form {
+	display: grid;
+	gap: 10px;
+	grid-auto-flow: row;
+	grid-template-columns: 300px;
+    justify-content: center;
+}
+
+textarea {
+    resize: vertical; /* só pode aumentar pra baixo */
+    resize: none; /* não pode aumentar o textarea */
+}
+
+div.navbar {
+    text-align: center;
+}
+
+button {
+    background: #555;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-family: "Verdana", sans-serif;
+    font-size: 14pt;
+    height: 42px;
+    margin: 0 8px;
+    width: 128px;
+}
