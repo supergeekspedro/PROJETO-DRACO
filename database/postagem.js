@@ -17,6 +17,11 @@ exports.Obter = async function() {
     return resultados.rows
 };
 
+exports.ObterUnica = async function(usuario) {
+    const comando = "SELECT * FROM postagem WHERE usuario = $1;"
+    const resultado = await cliente.query(comando, [usuario])
+    return resultado.rows[0]
+}
 
 exports.Excluir = async function(usuario) {
     const comando = "DELETE FROM postagem WHERE usuario = $1;"
@@ -29,3 +34,13 @@ exports.Excluir = async function(usuario) {
     }
 }
 
+exports.Atualizar = async function(usuario, descricao) {
+    const comando = "UPDATE postagem SET descricao = $2 WHERE usuario = $1;"
+    try {
+        await cliente.query(comando, [usuario, descricao])
+        console.log("POSTAGEM ATUALIZADA")
+    }
+    catch (erro) {
+        return erro
+    }
+}

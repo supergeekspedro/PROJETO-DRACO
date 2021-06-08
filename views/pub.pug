@@ -7,12 +7,9 @@ html(lang="pt-BR")
         link(rel="stylesheet", href="/public/style.css")
     body 
 
-        h1 PROJETO DRACO: feed
+        h1 PROJETO DRACO: pub
 
         hr
-
-        audio(autoplay, loop)
-            source(src="/public/agua.mp3", type="audio/mpeg")
 
         div(class="navbar")
             button(onclick=" location.href = '/' ") 🐲 index
@@ -21,10 +18,9 @@ html(lang="pt-BR")
 
         hr
 
-        each postagem in postagens
-            div(class="content")
-                div(class="content-user") #{postagem.usuario}
-                div(class="content-describe") #{postagem.descricao}
-                a(class="content-remove", href=`/remove/${postagem.usuario}`) 🔥
-                a(class="content-remove", href=`/pub/${postagem.usuario}`) ✏️
-            hr
+        h2 #{publicacao.usuario}
+
+        form(action="/atualizar", method="POST")
+            input(type="text", name="usuario", value=publicacao.usuario)
+            textarea(name="descricao", cols="30", rows="10") #{publicacao.descricao}
+            input(type="submit", value="Atualizar")
